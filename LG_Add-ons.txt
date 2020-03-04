@@ -1,0 +1,75 @@
+com.lge.vrplayer
+com.lge.gallery.vr.wallpaper
+com.lge.gestureanswering
+com.lge.cloudhub?
+com.lge.exchange?
+com.lge.email
+com.lge.floatingbar
+com.lge.gametuner
+com.lge.gba.android?
+com.lge.gallery.collagewallpaper
+com.lge.musiccontroller?
+com.lge.remote.lgairdrive?
+com.lge.smartshare.provider?
+com.lge.sui.widget?
+com.lge.drmservice?? - probably disables some stuff that is DRM-dependent
+com.lge.privacylock?
+com.lge.smartsharepush?
+com.lge.lgfota.permission??
+com.lge.eltest??
+com.lge.easyhome??
+com.lge.gcuv??
+com.lge.gnss.airtest??
+com.lge.gnsslogcat??
+com.lge.gnsstest??
+com.lge.theme.highcontrast?
+com.lge.launcher3??
+com.lge.la.task.incalagent??
+com.lge.mit??
+com.lge.lgaccount?
+com.lge.remote.setting?
+com.lge.sync??
+com.lge.gnsspostest??
+com.lge.lifetracker?
+com.lge.ims??
+com.lge.bnr?
+com.lge.bnr.launcher?
+com.lge.wifi.p2p?
+com.lge.voiceprint
+com.lge.lgmapui?
+org.simalliance.openmobileapi.service???
+com.lge.wernicke??
+com.lge.wallpaper.lightwave
+com.lge.smartshare?
+com.lge.cic.eden.service?
+com.lge.mirrorlink?
+com.lge.app.floating.res?
+com.lge.music?
+com.lge.sizechangable.musicwidget.widget
+com.lge.myplace
+com.lge.myplace.engine
+com.lge.qhelp? - anything dependent?  Wouldn't delete for other people
+com.lge.videostudio?
+com.lge.coneshortcut?
+com.lge.shutdownmonitor??
+com.lge.wallpaper.perspective??
+com.lge.springcleaning? - I actually like this
+com.lge.phonemanagement?? - Seems related to Spring Cleaning
+com.lge.iftttmanager?? IFTTT?
+com.lge.smartdoctor.webview? - Related to Spring Cleaning
+com.lge.intelligent??
+com.lge.ia.task.smartsetting??
+com.lge.lgworld - I would disable personally
+com.lge.snappage?
+com.lge.task?
+com.lge.themesquare? - if this is built into things other than the launcher then that could mess with the OS
+com.lge.themeservice? - see above
+com.lge.touchcontrol??
+com.lge.video.vr.wallpaper
+com.lge.voicecare?
+com.lge.wernicke.nlp?
+com.lge.mtalk.sf?
+com.lge.wapservice?
+com.lge.sizechangable.weather
+com.lge.sizechangable.weather.platform
+com.lge.sizechangable.weather.theme.optimus
