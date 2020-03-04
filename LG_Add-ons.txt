@@ -51,6 +51,7 @@ com.lge.myplace.engine
 com.lge.qhelp? - anything dependent?  Wouldn't delete for other people
 com.lge.videostudio?
 com.lge.coneshortcut?
+com.lge.crucialsoft.fido.client??
 com.lge.shutdownmonitor??
 com.lge.wallpaper.perspective??
 com.lge.springcleaning? - I actually like this
@@ -71,5 +72,55 @@ com.lge.wernicke.nlp?
 com.lge.mtalk.sf?
 com.lge.wapservice?
 com.lge.sizechangable.weather
+com.lge.friendsmanager
 com.lge.sizechangable.weather.platform
 com.lge.sizechangable.weather.theme.optimus
+
+
+Always on display?
+  com.lge.signboard
+  com.lge.signboard.initialguide
+
+LG Task App
+  com.lge.ia.task.informant
+  com.lge.ia.task.s4urecommender
+  com.lge.task
+  com.lge.ia.task.incalagent - Calendar plugin
+
+Keyboard
+  com.lge.ime
+  com.lge.ime.solution.handwriting
+  com.lge.ime.solution.text
+
+Mobile Switch
+  com.lge.bnr
+  com.lge.bnr.launcher
+  
+LG Help App
+  com.lge.qhelp
+  com.lge.qhelp.application
+
+LG Appearance
+  com.lge.launcher2
+  com.lge.launcher3
+  com.lge.theme.blackgold
+  com.lge.theme.highcontrast
+  com.lge.gallery.vr.wallpaper
+  com.lge.video.vr.wallpaper
+  com.lge.easyhome
+  com.android.wallpaper.livepicker
+  com.lge.lgworld
+  
+LG Health
+  com.lge.lifetracker
+
+Unsure
+  com.lge.cmas
+  com.lge.gcuv
+  com.LogiaGroup.LogiaDeck
+  com.lge.leccp
+  com.google.android.feedback
+
+LG RemoteCall?
+  com.rsupoort.rs.activity.lge.allinone
+  com.lge.remote.setting
