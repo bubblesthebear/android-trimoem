@@ -1,0 +1,7 @@
+I don't even use it as a phone.
+
+
+com.lge.wificall
+com.lge.ipservice?
+com.android.stk
+com.lge.gestureanswering
