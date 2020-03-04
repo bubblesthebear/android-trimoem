@@ -1,0 +1,13 @@
+https://www.androidsage.com/2018/09/01/list-of-bloatware-remove-uninstall-android-device-without-root/
+
+https://forum.xda-developers.com/android/development/remove-bloatware-lg-x-lg-x-devices-t3652011
+
+https://forum.xda-developers.com/tmobile-g6/how-to/lg-g6-h870ds-debloat-bloatware-removal-t3941274
+
+https://gist.github.com/v-dimitrov/048e1e6c6055573d295f9c007ad49c8a
+
+https://forum.xda-developers.com/lg-v30/how-to/apps-to-debloat-root-t3746391
+
+https://forum.xda-developers.com/lg-v30/how-to/guide-make-v30-faster-smoother-t3693083
+
+Avoid mistake:  https://forum.xda-developers.com/lg-v30/help/best-practice-to-debloat-rooted-lg-v30-t3875829
