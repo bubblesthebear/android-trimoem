@@ -1,0 +1,72 @@
+Never used
+com.google.earth - Google Earth
+com.google.android.street - Google Street View
+com.google.android.videos - Play Movies
+com.google.android.marvin.talkback - Talkback
+
+Deprecated?
+com.google.android.apps.plus
+com.google.android.apps.currents
+
+
+Optional
+com.google.android.apps.tycho
+com.google.android.youtube
+com.google.android.music
+
+
+Unsure
+com.android.exchange
+com.android.email
+com.android.cellbroadcastreceiver
+com.android.proxyhandler
+com.android.printspooler
+com.google.android.apps.enterprise.dmagent - Device Policy?
+
+
+Dangerous or Malicious?
+org.simalliance.openmobileapi.eseterminal
+org.simalliance.openmobileapi.uicc1terminal
+org.simalliance.openmobileapi.uicc2terminal
+
+
+Unknown
+com.android.providers.partnerbookmarks
+com.android.galaxy4
+com.android.facelock
+com.android.apps.tag
+com.android.proxyhandler
+
+
+Keyboards
+com.google.android.inputmethod.japanese
+com.google.android.inputmethod.korean
+com.google.android.inputmethod.pinyin
+com.google.android.inputmethod.piyin
+com.android.inputmethod.latin
+
+
+Appearance
+com.android.musicvis
+com.android.noisefield
+com.android.musicfx
+com.android.noisefield
+com.android.phasebeam
+com.android.dreams.basic
+com.android.dreams.phototable
+com.android.wallpaper.holospiral
+com.android.wallpaper.livepicker
+com.tmobile.themechooser
+com.tmobile.thememanager
+
+
+
+Google Products
+com.google.android.apps.docs.editors.sheets
+com.google.android.apps.docs.editors.slides
+com.google.android.apps.cloudprint
+com.google.android.apps.books
+com.google.android.apps.fitness
+com.google.android.apps.docs - Google Drive?
+com.google.android.apps.docs.editors.docs - Google Docs
+com.google.android.apps.walletnfcrel
