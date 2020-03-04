@@ -1,0 +1,6 @@
+pm uninstall -k --user 0 com.evernote &&
+pm uninstall -k --user 0 com.evernote.promohelper &&
+pm uninstall -k --user 0 com.facebook.katana &&
+pm uninstall -k --user 0 com.facebook.system &&
+pm uninstall -k --user 0 com.facebook.appmanager &&
+pm uninstall -k --user 0 com.instagram.android
