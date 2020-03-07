@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## Add logging!
+
 # function grab_packages
 # {
 
@@ -14,16 +16,44 @@
 
 # }
 
-# function test_wifi_adb
-# {
+function test_log #If anyone uses this code, delete this function to protect privacy
+{
 
-    # Test the script
-  #  echo Which device is it?
-  #  read adbdevid
-  #  adb tcpip 5575
-  #  adb connect $adbdevid:5575
+    #
+    ## ro.build.version.sdk
+    ## ro.build.version.release
+    ## ro.build.version.security_patch
+    ## ro.vendor.product.brand
+    ## ro.vendor.product.manufacturer
+    ## ro.vendor.product.model
+    ## ro.vendor.product.name
+    ## ro.model.name
+    ## persist.sys.locale
+    ## persist.service.storage.low
+    ## net.hostname
+    ## ro.carrier
 
-# }
+    #
+    adbdevname2=$(adb -s $adbdevid shell getprop ro.product.model)
+    textdate=$(date '+%d-%m-%Y %H-%M')
+    textrandomnumber=$((1000 + RANDOM % 2000))
+    textall="$textdate"" - ""$textrandomnumber"
+    adbdevname="$adbdevname2"" - ""$textall"
+        if [-z "$adbdevname"]; then
+            adbdevname="Android"" - ""$textall"
+            echo adbdevname;
+        fi
+    mkdir $HOME/Package_Lists/
+    adb -s $adbdevid shell "pm list packages" > $HOME/Package_Lists/$adbdevname.txt
+    ## adb -s $adbdevid shell "dumpsys activity services | grep -v "com.google.*" | grep -v "com.android.bluetooth" | grep 'ConnectionRecord{'"
+        ## You could grab the list off running services too and grep against bad services.
+    # only use the first exec mkdir $HOME/Package_Lists/
+    ## adb -s $adbdevid pull -p -a "/sdcard/Tech_Temp1/" "$HOME/Package_Lists/"
+    echo 
+    echo Done!
+
+
+}
 
 function test_adb
 {
@@ -55,15 +85,19 @@ function grab_packages_test
 {
 
     #
-    adbdevname=$(adb -s $adbdevid shell getprop ro.product.model)
+    adbdevname2=$(adb -s $adbdevid shell getprop ro.product.model)
+    textdate=$(date '+%d-%m-%Y %H-%M')
+    textrandomnumber=$((1000 + RANDOM % 2000))
+    textall="$textdate"" - ""$textrandomnumber"
+    adbdevname="$adbdevname2"" - ""$textall"
         if [-z "$adbdevname"]; then
+            adbdevname="Android"" - ""$textall"
             echo adbdevname;
         fi
     mkdir $HOME/Package_Lists/
-    # adb -s $adbdevid shell cd sdcard
-    ## adb -s $adbdevid shell mkdir -m 777 /sdcard/Tech_Temp1
-    ## adb -s $adbdevid shell "pm list packages" > /sdcard/Tech_Temp1/$adbdevname.txt"
     adb -s $adbdevid shell "pm list packages" > $HOME/Package_Lists/$adbdevname.txt
+    ## adb -s $adbdevid shell "dumpsys activity services | grep -v "com.google.*" | grep -v "com.android.bluetooth" | grep 'ConnectionRecord{'"
+        ## You could grab the list off running services too and grep against bad services.
     # only use the first exec mkdir $HOME/Package_Lists/
     ## adb -s $adbdevid pull -p -a "/sdcard/Tech_Temp1/" "$HOME/Package_Lists/"
     echo 
