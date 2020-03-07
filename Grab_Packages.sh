@@ -58,21 +58,40 @@ function test_log #If anyone uses this code, delete this function to protect pri
 function test_adb
 {
 
-    # Test the script
+    #
+    # First check if there is already an IP connected, second if nothing is connected then ask if there is an IP known, third if no IP is known and no devices then error.
+
+    # Check if there is already an IP connected.
+    validip="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+    devicelist=$(adb devices)
+        if [[ $devicelist =~ $validip ]]; then # IP Found
+            noips=0;
+        else # No IP
+            noips=1;
+            if [[ $(wc -l <$devicelist) -lt 1 ]] then # No devices found either
+                # Idk
+            fi
+        fi
+        
+
+
     echo Listing devices...
     echo
     adb devices
-    echo 
+    echo
+
     echo Reading IP Address
     echo
-    # Runs command to show device's WiFi configuration, then uses grep to narrow down only what matches IP addresses visually, then uses 'head -1' to lower it further to the very first match, as two IP addresses are actually on the same output line and so both will be displayed otherwise.
-    adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
+    adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1) # Runs command to show device's WiFi configuration, then uses grep to narrow down only what matches IP addresses visually, then uses 'head -1' to lower it further to the very first match, as two IP addresses are actually on the same output line and so both will be displayed otherwise.
+
     adb tcpip 5575
     sleep 4 # Otherwise it will say "5575:5575" as an error
+
     echo 
     echo Device IP is $adbdevip
     #echo What is the device IP?
     #read adbdevidip
+
     adbdevid=$adbdevip:5575
     echo 
     echo Connecting to $adbdevid
@@ -90,16 +109,19 @@ function grab_packages_test
     textrandomnumber=$((1000 + RANDOM % 2000))
     textall="$textdate"" - ""$textrandomnumber"
     adbdevname="$adbdevname2"" - ""$textall"
-        if [-z "$adbdevname"]; then
+
+        if [-z"$adbdevname"]; then
             adbdevname="Android"" - ""$textall"
             echo adbdevname;
         fi
+
     mkdir $HOME/Package_Lists/
-    adb -s $adbdevid shell "pm list packages" > $HOME/Package_Lists/$adbdevname.txt
+    adb -s $adbdevid shell "pm list packages" > $HOME/Package_Lists/"$adbdevname".txt
     ## adb -s $adbdevid shell "dumpsys activity services | grep -v "com.google.*" | grep -v "com.android.bluetooth" | grep 'ConnectionRecord{'"
         ## You could grab the list off running services too and grep against bad services.
     # only use the first exec mkdir $HOME/Package_Lists/
     ## adb -s $adbdevid pull -p -a "/sdcard/Tech_Temp1/" "$HOME/Package_Lists/"
+
     echo 
     echo Done!
 
@@ -109,7 +131,7 @@ function now_done
 {
 
     #
-    
+    echo Done!
 
 }
 
