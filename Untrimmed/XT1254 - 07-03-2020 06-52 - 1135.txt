@@ -1,0 +1,307 @@
+X1 = Delete for me
+X2 = Maybe delete
+X3 = ?
+X4 = Disable
+
+
+package:com.google.android.youtube
+package:com.motorola.android.buacloudcontactadapter X2
+package:com.motorola.motocare X3
+package:com.oasisfeng.greenify
+package:com.android.providers.telephony
+package:com.google.android.gallery3d
+package:com.google.android.googlequicksearchbox X3
+package:com.verizon.settings.secure X3
+package:com.verizon.mips.services X3
+package:com.verizon.vzwavs X1
+package:com.android.providers.calendar
+package:com.google.android.apps.googleassistant
+package:com.android.providers.media
+package:com.motorola.badger
+package:com.google.android.onetimeinitializer
+package:com.amazon.venezia X1
+package:com.motorola.bug2go
+package:com.shazam.android
+package:com.motorola.camera
+package:com.gsamlabs.bbm.pro
+package:com.niksoftware.snapseed
+package:com.android.wallpapercropper
+package:com.teslacoilsw.launcher
+package:com.quicinc.cne.CNEService
+package:com.freedompop.fpdiagnostics
+package:com.android.protips
+package:com.shanga.walli
+package:com.agilebits.onepassword
+package:com.motorola.ccc.devicemanagement
+package:com.tasomaniac.openwith
+package:org.simalliance.openmobileapi.service
+package:com.brainfm.app
+package:com.android.documentsui
+package:com.motorola.android.settings.modemdebug
+package:com.android.galaxy4
+package:com.android.externalstorage
+package:com.android.htmlviewer
+package:com.imdb.mobile X1
+package:com.motorola.hotspotlauncher
+package:com.google.android.apps.navlite
+package:net.doo.snap
+package:com.android.mms.service
+package:com.cequint.ecid
+package:com.motorola.sensorhub.stm401.updater
+package:com.android.providers.downloads
+package:com.motorola.coresettingsext
+package:xmw.app.playerxtreme
+package:com.motorola.wappushsi
+package:com.clockworkbits.piston
+package:com.motorola.android.sdm.plugins.connmo
+package:com.motorola.android.settings.diag_mdlog
+package:au.com.shiftyjelly.pocketcasts
+package:com.vzw.hss.myverizon X1
+package:com.motorola.ltebroadcastservices_vzw X4
+package:com.motorola.entitlement
+package:com.yourcompany.adarkroom
+package:com.motorola.ccc.checkin
+package:com.microsoft.office.officelens
+package:com.motorola.audiomonitor.helper
+package:com.motorola.programmenu
+package:com.motorola.visualvoicemail
+package:com.motorola.ccc.mainplm
+package:com.vcast.mediamanager
+package:com.motorola.motgeofencesvc
+package:org.schabi.newpipe
+package:com.tuya.smart
+package:com.google.android.configupdater
+package:com.motorola.ccc.ota
+package:com.motorola.ccc.notification
+package:com.android.defcontainer
+package:com.qualcomm.services.location
+package:org.zwanoo.android.speedtest
+package:com.android.providers.downloads.ui
+package:com.android.vending
+package:com.android.pacprocessor
+package:com.motorola.pgmsystem2
+package:com.motorola.bodyguard
+package:com.motorola.motodisplay.env
+package:com.urbandroid.sleep.addon.port
+package:com.microsoft.skydrive
+package:net.dinglisch.android.taskerm
+package:com.bambuna.podcastaddict
+package:com.android.certinstaller
+package:com.android.carrierconfig
+package:com.google.android.marvin.talkback
+package:com.motorola.android.sdm.plugins.diagmon
+package:com.brave.browser
+package:android
+package:com.android.contacts
+package:com.motorola.android.provisioning
+package:com.vzw.apnservice X4
+package:com.motorola.vzw.phone.extensions X4
+package:com.digibites.accubattery
+package:com.ovz.carscanner
+package:ru.andr7e.deviceinfohw
+package:com.android.mms
+package:com.android.nfc
+package:com.android.stk
+package:com.android.launcher3
+package:com.motorola.rcs.eab
+package:com.android.backupconfirm
+package:com.motorola.vzw.settings.extensions X4
+package:com.waze
+package:com.devdnua.equalizer
+package:com.motorola.obdmapi.service
+package:com.google.samples.apps.cardboarddemo
+package:com.microsoft.office.onenote
+package:com.google.android.deskclock
+package:org.codeaurora.ims
+package:com.android.statementservice
+package:com.google.android.gm
+package:com.overlook.android.fing
+package:com.urbandroid.sleep.full.key
+package:com.motorola.motocit
+package:com.android.wallpaper.livepicker X1
+package:kb2.soft.carexpenses
+package:com.android.phasebeam
+package:com.google.android.instantapps.supervisor
+package:la.droid.qr
+package:com.motorola.vzw.provider X4
+package:com.google.android.setupwizard
+package:com.qualcomm.qcrilmsgtunnel
+package:com.android.providers.settings
+package:com.android.sharedstoragebackup
+package:com.google.android.apps.freighter
+package:com.finalwire.aida64
+package:com.google.android.music
+package:com.android.printspooler X1
+package:com.motorola.android.sepolicyupdate X2
+package:com.motorola.android.sdm.configupdate X2
+package:com.android.dreams.basic X1
+package:com.motorola.mydroid
+package:com.motorola.MotGallery2
+package:org.mozilla.focus
+package:com.android.inputdevices
+package:com.slacker.radio
+package:com.macropinch.pearl
+package:com.motorola.android.nativedropboxagent
+package:com.motorola.service.ims.presence
+package:com.motorola.nfc
+package:com.motorola.audiomonitor
+package:com.motorola.commandcenter
+package:com.motorola.targetnotif
+package:com.motorola.android.jvtcmd
+package:com.motorola.motosignature.app
+package:com.motorola.flipcase X1
+package:com.vznavigator.Generic X1
+package:com.google.android.apps.cloudprint X1
+package:com.google.android.apps.docs
+package:com.google.android.apps.maps
+package:com.google.android.apps.plus X1
+package:com.motorola.service.ims
+package:com.motorola.imsconfigtest
+package:com.motorola.dataoffloading
+package:com.todoist
+package:com.urbandroid.sleep
+package:com.android.cellbroadcastreceiver
+package:com.teslacoilsw.launcher.prime
+package:com.google.android.webview
+package:com.laurencedawson.reddit_sync.pro
+package:com.motorola.localwipe.policy
+package:com.google.android.apps.fitness
+package:com.motorola.contacts.preloadcontacts
+package:com.android.server.telecom
+package:com.google.android.syncadapters.contacts
+package:com.motorola.android.providers.settings
+package:com.android.facelock X1
+package:com.android.keychain
+package:com.android.chrome
+package:com.urbandroid.sleep.captchapack
+package:com.qualcomm.qti.rcsbootstraputil
+package:com.android.dialer
+package:net.zedge.android
+package:com.google.android.packageinstaller
+package:com.google.android.gms
+package:com.google.android.gsf
+package:com.google.android.tag
+package:com.google.android.tts
+package:com.google.android.apps.walletnfcrel
+package:com.android.calllogbackup
+package:com.google.android.partnersetup
+package:com.motorola.email X1
+package:com.motorola.genie X2
+package:com.motorola.nfcui
+package:com.motorola.setup
+package:com.google.android.videos
+package:com.motorola.vzw.cloudsetup X1
+package:com.wits.obdm_permissions
+package:com.motorola.appdirectedsmsproxy
+package:com.android.proxyhandler
+package:com.netflix.Speedtest
+package:com.motorola.thermalservice
+package:com.netflix.mediaclient
+package:com.aidungeon
+package:com.mi.android.globalFileexplorer
+package:org.videolan.vlc
+package:com.customermobile.preload.vzw X4
+package:info.papdt.blackblub
+package:com.google.android.feedback
+package:com.google.android.apps.photos
+package:com.astech.forscandemo
+package:com.google.android.calendar
+package:com.motorola.onetimeinitializer
+package:com.android.managedprovisioning
+package:com.motorola.launcherconfig
+package:com.spotify.music
+package:com.google.android.apps.googlevoice
+package:com.ubercab
+package:com.telecomsys.directedsms.android.SCG
+package:com.motorola.demo X2
+package:com.motorola.moto
+package:com.motorola.slpc
+package:com.android.noisefield
+package:com.johnemulators.johngba
+package:snoddasmannen.galimulator
+package:com.android.providers.partnerbookmarks X2
+package:com.google.android.gsf.login
+package:org.prowl.torque
+package:com.motricity.verizon.ssodownloadable X2
+package:com.motorola.vzw.loader X4
+package:com.android.wallpaper.livepicker X1
+package:com.motorola.devicemanagement
+package:com.amazon.mShop.android X1
+package:com.motorola.motocare.internal X3
+package:com.motorola.gpsnotifier
+package:org.mozilla.firefox
+package:com.qualcomm.qti.rcsimsbootstraputil
+package:com.google.android.apps.translate
+package:com.google.android.backuptransport
+package:com.klinker.android.twitter_l
+package:com.motorola.audioeffects
+package:com.oasisfeng.greenify.pro
+package:com.android.bookmarkprovider
+package:com.android.settings
+package:com.google.android.inputmethod.pinyin X1
+package:com.mda.carbit
+package:com.termux
+package:com.android.calculator2
+package:com.google.android.apps.books
+package:com.google.android.projection.gearhead
+package:com.qualcomm.location
+package:com.google.android.apps.tasks
+package:pl.solidexplorer2
+package:com.motorola.InductiveChargeUI
+package:com.google.android.apps.chromecast.app
+package:audio.sound.effect.bass.virtrualizer.equalizer
+package:com.automattic.simplenote
+package:com.lmi.motorola.rescuesecurity X3
+package:com.motorola.slpc_sys
+package:OCTech.Mobile.Applications.TouchScan
+package:com.motorola.setupwizard.phoneservice
+package:com.motorola.actions
+package:com.audible.application
+package:com.asurion.android.verizon.vms X1
+package:com.android.wallpaper
+package:com.android.vpndialogs
+package:com.qualcomm.vzw_api X4
+package:com.google.android.keep
+package:com.google.android.talk X3
+package:com.motorola.bach.modemstats
+package:com.piriform.ccleaner
+package:com.android.phone
+package:com.android.shell
+package:com.duckduckgo.mobile.android
+package:com.shahid.pineapple
+package:com.android.providers.userdictionary
+package:com.ideashower.readitlater.pro
+package:com.sonymobile.androidapp.audiorecorder
+package:com.motorola.simmanager
+package:com.standardnotes
+package:com.ariyalion.darkroom
+package:com.android.location.fused
+package:com.android.systemui
+package:com.motorola.motodisplay
+package:com.android.bluetoothmidiservice
+package:com.gamehivecorp.taptitans
+package:com.estmob.android.sendanywhere
+package:net.techet.netanalyzerlite.an
+package:com.bambuna.podcastaddictdonate
+package:com.motorola.setupwizard.devicesetup
+package:com.birdshel.Uciana
+package:com.google.android.play.games
+package:com.unciv.app
+package:flar2.devcheck
+package:com.lemurmonitors.bluedriver
+package:com.google.android.apps.magazines X1
+package:com.android.bluetooth
+package:com.qualcomm.timeservice
+package:com.qualcomm.atfwd
+package:com.qualcomm.embms
+package:com.android.providers.contacts
+package:com.motorola.setupwizard.controller
+package:com.android.captiveportallogin
+package:com.motorola.droid.settings.extensions
+package:com.microsoft.todos
+package:com.verizon.messaging.vzmsgs X1
+package:com.verizon.llkagent X2
+package:com.motorola.android.dm.service
+package:com.gotv.nflgamecenter.us.lite
+package:com.google.android.inputmethod.latin X1
+package:com.amazon.kindle X1
