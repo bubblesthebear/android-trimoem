@@ -75,6 +75,8 @@ function test_adb
         
 
 
+    ## If the validip above stays then below is outdated.
+
     echo Listing devices...
     echo
     adb devices
