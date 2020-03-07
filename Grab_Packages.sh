@@ -54,11 +54,11 @@ function adb_connect
         adbdevip2=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)") # this REGEX isn't working for the non-oreo phones
         adbdevip=$($adbdevip | head -1)
 
-        # adbdevid=$adbdevip:5575
+        adbdevid=$adbdevip:5575
         # # DEBUGGING Falcon # #
         # # adbdevid=10.0.0.53:5575
         # # DEBUGGING Turbo # #
-        adbdevid=10.0.0.217:5575
+        # #adbdevid=10.0.0.217:5575
         adb connect $adbdevid
 
     ## Either connect via IP or set up WiFi ADB and then connect over IP
