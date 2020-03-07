@@ -58,13 +58,45 @@ function adb_connect
     #
     ## Grab device list
 
+    adb tcpip 5575
+    sleep 4
+    devicelist=$(adb devices)
+
     ## Check if any are non-wireless and target if not
+
+    validip="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+        if [[ $devicelist =~ $validip ]]; then # IP Found
+
+            noips=0;
+            adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
+
+            adbdevid=$adbdevip:5575
+            adb connect $adbdevid
+
+        else # No IP
+
+            noips=1;
+            adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
+
+            adb tcpip 5575 # Is this relevant?
+
+            if [[ $(wc -l <$devicelist) -lt 1 ]]; then # No devices found either
+                echo No devices found.  Retry!
+                read -rsp $'Press any key to exit...\n' -n1 key
+                exit
+            fi
+        fi
 
     ## Either connect via IP or set up WiFi ADB and then connect over IP
 
     ## Done for prototype connect.
 
+
+
+
     echo 
+    echo Connected?
+    echo
 
 }
 
@@ -99,8 +131,8 @@ function test_log #If anyone uses this code, delete this function to protect pri
     #
 
 
-    # DEBUGGING
-    adbdevid=10.0.0.80:5575
+    # # DEBUGGING # #
+    # adbdevid=10.0.0.80:5575
 
     # Labels for package list files
     adbdevname2=$(adb -s $adbdevid shell getprop ro.product.model)
@@ -163,12 +195,12 @@ function now_done
 # start of script
 
 
-        # DEBUGGING
-        test_log
-        read -rsp $'Press any key to continue...\n' -n1 key
-        exit
+        # # DEBUGGING # #
+        # test_log
+        # read -rsp $'Press any key to continue...\n' -n1 key
+        # exit
 
-        test_adb
+        adb_connect
         read -rsp $'Press any key to continue...\n' -n1 key
         grab_packages_test
         read -rsp $'Press any key to continue...\n' -n1 key
