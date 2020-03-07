@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Two versions:  Trim and Refresh.  Version 1 will simply trim down all unwanted (by me in this prototype) packages after factory reset.  V2 will refresh (possible stock replacements, new features and apps that are lightweight, etc.)
+
+## First verify it's the correct device, then do 2x confirmation.
