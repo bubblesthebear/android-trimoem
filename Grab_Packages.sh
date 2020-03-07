@@ -18,8 +18,8 @@ function test_adb
             noips=0;
         else # No IP
             noips=1;
-            if [[ $(wc -l <$devicelist) -lt 1 ]] then # No devices found either
-                # Idk
+            if [[ $(wc -l <$devicelist) -lt 1 ]]; then # No devices found either
+                echo idk # Idk
             fi
         fi
         
@@ -64,6 +64,8 @@ function adb_connect
 
     ## Done for prototype connect.
 
+    echo 
+
 }
 
 function grab_packages_test
@@ -102,10 +104,10 @@ function test_log #If anyone uses this code, delete this function to protect pri
 
     # Labels for package list files
     adbdevname2=$(adb -s $adbdevid shell getprop ro.product.model)
-    textdate=$(date '+%d-%m-%Y %H-%M')
+    textdate=$(date '+%d-%m-%Y %H_%M')
     textrandomnumber=$((1000 + RANDOM % 2000))
     textall="$textdate"" - ""$textrandomnumber"
-    adbdevname="$adbdevname2"" - ""$textall"
+    adbdevname="$adbdevname2"" _ ""$textall"
 
        ## if [-z"$adbdevname"]; then # If device model is somehow empty, default to generic 'Android'.  Definitely better to use any of the other build/manufacturer props.
        ##     adbdevname="Android"" - ""$textall"
@@ -114,34 +116,35 @@ function test_log #If anyone uses this code, delete this function to protect pri
 
     #Logs.  Line1:  Product information, Line2:  Product Information, Line3:  Software Build Information, Line4:  Software Information
 
-    prodModel = $(adb -s $adbdevid shell getprop ro.product.model)
-    prodName = $(adb -s $adbdevid shell getprop ro.product.name)
-    prodBrand = $(adb -s $adbdevid shell getprop ro.vendor.product.brand)
-    prodManufa = $(adb -s $adbdevid shell getprop ro.vendor.product.manufacturer)
+    prodModel=$(adb -s $adbdevid shell getprop ro.product.model)
+    prodName=$(adb -s $adbdevid shell getprop ro.product.name)
+    prodBrand=$(adb -s $adbdevid shell getprop ro.vendor.product.brand)
+    prodManufa=$(adb -s $adbdevid shell getprop ro.vendor.product.manufacturer)
 
-    prodCarrier = $(adb -s $adbdevid shell getprop ro.carrier)
+    prodCarrier=$(adb -s $adbdevid shell getprop ro.carrier)
+    prodStorageSize=$(adb -s $adbdevid shell getprop ro.device.memory.internal)
 
-    prodOS = $(adb -s $adbdevid shell getprop ro.build.version.release)
-    prodAPISDK = $(adb -s $adbdevid shell getprop ro.build.version.sdk)
-    prodSecurityPatches = $(adb -s $adbdevid shell getprop ro.build.version.security_patch)
+    prodOS=$(adb -s $adbdevid shell getprop ro.build.version.release)
+    prodAPISDK=$(adb -s $adbdevid shell getprop ro.build.version.sdk)
+    prodSecurityPatches=$(adb -s $adbdevid shell getprop ro.build.version.security_patch)
 
-    prodLanguage = $(adb -s $adbdevid shell getprop persist.sys.locale)
-    prodHostname = $(adb -s $adbdevid shell getprop net.hostname)
+    prodLanguage=$(adb -s $adbdevid shell getprop persist.sys.locale)
+    prodHostname=$(adb -s $adbdevid shell getprop net.hostname)
 
-    Line1="Model:  ""$prodModel""; Model Brand:  ""$prodBrand"\n
-    Line2="Model Name:  ""$prodName"";  Model Manufacturer:  ""$prodManufa"\n
-    Line3="Carrier:  ""$prodCarrier"\n
-    Line4="OS:  ""$prodOS"";  API SDK:  ""$prodAPISDK"";  Security Patch:  ""$prodSecurityPatches"\n
-    Line5="Hostname:  ""$prodHostname"";  Language:  ""$prodLanguage"\n
+    Line1="Model:  ""$prodModel""; Model Brand:  ""$prodBrand"
+    Line2="Model Name:  ""$prodName"";  Model Manufacturer:  ""$prodManufa"
+    Line3="Storage:  ""$prodStorageSize""GB;  Carrier:  ""$prodCarrier"
+    Line4="OS:  ""$prodOS"";  OS API SDK:  ""$prodAPISDK"";  Security Patch:  ""$prodSecurityPatches"
+    Line5="Hostname:  ""$prodHostname"";  Language:  ""$prodLanguage"
 
     mkdir $HOME/Package_Lists/Logs/ # Just ignore error
-    lognameid=Log_"$textall".txt
+    lognameid="Log _ ""$prodModel"" _ ""$textall"
 
-    $Line1 > $HOME/Package_Lists/Logs/"$lognameid".txt
-    $Line2 >> $HOME/Package_Lists/Logs/"$lognameid".txt
-    $Line3 >> $HOME/Package_Lists/Logs/"$lognameid".txt
-    $Line4 >> $HOME/Package_Lists/Logs/"$lognameid".txt
-    $Line5 >> $HOME/Package_Lists/Logs/"$lognameid".txt
+    echo "$Line1" > $HOME/Package_Lists/Logs/"$lognameid".txt
+    echo "$Line2" >> $HOME/Package_Lists/Logs/"$lognameid".txt
+    echo "$Line3" >> $HOME/Package_Lists/Logs/"$lognameid".txt
+    echo "$Line4" >> $HOME/Package_Lists/Logs/"$lognameid".txt
+    echo "$Line5" >> $HOME/Package_Lists/Logs/"$lognameid".txt
 
     echo 
     echo Log done!
@@ -159,9 +162,16 @@ function now_done
 
 # start of script
 
+
+        # DEBUGGING
+        test_log
+        read -rsp $'Press any key to continue...\n' -n1 key
+        exit
+
         test_adb
         read -rsp $'Press any key to continue...\n' -n1 key
         grab_packages_test
         read -rsp $'Press any key to continue...\n' -n1 key
         test_log
+        read -rsp $'Press any key to continue...\n' -n1 key
         exit
