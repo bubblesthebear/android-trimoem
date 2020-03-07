@@ -56,36 +56,50 @@ function adb_connect
 {
 
     #
+
     ## Grab device list
 
     adb tcpip 5575
     sleep 4
-    devicelist=$(adb devices)
+
+    # devicelist=$(adb devices)
+    # devicelists=$($devicelist | grep -w "device" -c) # Can't seem to parse the output.
+
+
+    ## Check if USB Debugging is even enabled yet
 
     ## Check if any are non-wireless and target if not
 
-    validip="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
-        if [[ $devicelist =~ $validip ]]; then # IP Found
 
-            noips=0;
-            adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
+    # validip="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+    #    if [[ $devicelist =~ $validip ]]; then # IP Found
 
-            adbdevid=$adbdevip:5575
-            adb connect $adbdevid
+    #        noips=0;
+    #        adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
 
-        else # No IP
+    #        adbdevid=$adbdevip:5575
+    #        adb connect $adbdevid
 
-            noips=1;
-            adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
+    #    else # No IP
 
-            adb tcpip 5575 # Is this relevant?
+    #        noips=1;
+    #        adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
 
-            if [[ $(wc -l <$devicelist) -lt 1 ]]; then # No devices found either
-                echo No devices found.  Retry!
-                read -rsp $'Press any key to exit...\n' -n1 key
-                exit
-            fi
-        fi
+            # adb tcpip 5575 # Is this relevant?
+
+    #        if [[ $(wc -l <$devicelist) -lt 1 ]]; then # No devices found either
+    #            echo No devices found.  Retry!
+    #            read -rsp $'Press any key to exit...\n' -n1 key
+    #            exit
+    #        fi
+    #    fi
+
+
+
+        adbdevip=$(adb shell ip addr show wlan0 | grep -E -o -m1 "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" | head -1)
+
+        adbdevid=$adbdevip:5575
+        adb connect $adbdevid
 
     ## Either connect via IP or set up WiFi ADB and then connect over IP
 
@@ -95,7 +109,6 @@ function adb_connect
 
 
     echo 
-    echo Connected?
     echo
 
 }
@@ -111,11 +124,6 @@ function grab_packages_test
     textrandomnumber=$((1000 + RANDOM % 2000))
     textall="$textdate"" - ""$textrandomnumber"
     adbdevname="$adbdevname2"" - ""$textall"
-
-        if [-z"$adbdevname"]; then # If device model is somehow empty, default to generic 'Android'.  Definitely better to use any of the other build/manufacturer props.
-            adbdevname="Android"" - ""$textall"
-            echo adbdevname; # Visible
-        fi
 
     mkdir $HOME/Package_Lists/ # Just ignore error
     adb -s $adbdevid shell "pm list packages" > $HOME/Package_Lists/"$adbdevname".txt
@@ -141,10 +149,6 @@ function test_log #If anyone uses this code, delete this function to protect pri
     textall="$textdate"" - ""$textrandomnumber"
     adbdevname="$adbdevname2"" _ ""$textall"
 
-       ## if [-z"$adbdevname"]; then # If device model is somehow empty, default to generic 'Android'.  Definitely better to use any of the other build/manufacturer props.
-       ##     adbdevname="Android"" - ""$textall"
-       ##     echo adbdevname; # Visible
-       ## fi
 
     #Logs.  Line1:  Product information, Line2:  Product Information, Line3:  Software Build Information, Line4:  Software Information
 
